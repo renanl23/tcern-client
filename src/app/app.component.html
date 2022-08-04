@@ -8,12 +8,13 @@
 </head>
 <body>
 <h1>{{title}}</h1>
-<form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" >
+<form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" *ngIf="!isFormSent">
   <label for="dividendo">Dividendo:</label>
   <input type = "number" name = "dividendo" id="dividendo" ngModel>
   <label for="divisor">Divisor:</label>
   <input type = "number" name = "divisor" id="divisor" min="1" ngModel>
-  <input type="submit" value="Calcular" class="btnCalcular">
+  <input type="submit" value="Calcular" class="btnCalcular">  
 </form>
+<h3 *ngIf="isFormSent">Resultado: {{resultado}}</h3>
 </body>
 </html>
