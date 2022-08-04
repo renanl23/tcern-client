@@ -7,13 +7,13 @@
     <title>TCE 2022 - Renan Lima Gomes</title>
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <form>
-        <label for="dividendo">Dividendo:</label>
-        <input type="number" id="dividendo">
-        <label for="divisor">Divisor:</label>
-        <input type="number" id="divisor" min="1">
-        <input type="submit" value="Calcular" class="btnCalcular">
-    </form>        
+<h1>{{title}}</h1>
+<form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" >
+  <label for="dividendo">Dividendo:</label>
+  <input type = "number" name = "dividendo" id="dividendo" ngModel>
+  <label for="divisor">Divisor:</label>
+  <input type = "number" name = "divisor" id="divisor" min="1" ngModel>
+  <input type="submit" value="Calcular" class="btnCalcular">
+</form>
 </body>
 </html>
